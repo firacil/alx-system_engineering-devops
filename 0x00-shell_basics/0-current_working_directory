@@ -1,2 +1,2 @@
-#!/bin/bash
-the second
+#!/bin/bash 
+./0-current_working_directory
