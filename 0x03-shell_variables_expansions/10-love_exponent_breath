@@ -1,2 +1,2 @@
 #!/bin/bash
-export LOVE="$BREATH" 
+export LOVE=$(($BREATH)) 
