@@ -1,2 +1,2 @@
 #!/bin/bash
-echo | emport | $(($POWER / $DIVIDE '/n'))
+echo | emport | $(($POWER / $DIVIDE )) '/n'
