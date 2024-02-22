@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash Script that displays content of current directory in a list format
+for file in *; do
+	# check if the file is hidden or regular file
+	if [ -f "$file" ] && [ "${file:0:1}" != "." ]; then
+		# extract the part of the name after the first dash
+		name=$(echo "$file" | cut -d '-' -f 2-)
+		# print extracted name
+		echo "$name"
+	fi
+done
