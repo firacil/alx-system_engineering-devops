@@ -5,7 +5,7 @@ min=1
 while [ $hour -le 12 ]; do
 	printf "Hour: %1d\n" $hour
 	while [ $min -le 59 ]; do
-		printf "%02d\n" $min
+		printf "%1d\n" $min
 		((min++))
 	done
 	((hour++))
