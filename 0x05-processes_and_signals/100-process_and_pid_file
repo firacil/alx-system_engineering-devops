@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Bash script that creates the file "/var/run/myscript.pid" containing its PID
+# Displays "To infinity and beyond" indefinetely
+# Displays "I hate the kill command" when receiving a SIGTERM signal
+# Displays "Y u no love me?!" when receiving a SIGINT signal
+# Deletes the file "/var/run/myscript.pid" and terminates itself when receiving a SIGQUIT or SIGTERM signal
+
+
