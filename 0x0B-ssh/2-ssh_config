@@ -1,0 +1,6 @@
+# script to ssh configuration
+
+Host *
+    IdentifyFile ~/.ssh/school
+    PasswordAuthentication no
+    ChallengeResponseAuthentication no
