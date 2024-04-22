@@ -30,7 +30,7 @@ Tel: *+251925346593.*
 
 ## Requirements
 
-###General
+### General
 * Allowed editors: vi, vim, emacs
 * All your files will be interpreted on Ubuntu 16.04 LTS
 * All your files should end with a new line
