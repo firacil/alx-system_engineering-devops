@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Intalls nginx server
+apt-get update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+
+rep="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.hashnode.com/@firacil permanent;"
+sudo sed -i "s/server_name _;/$rep/" /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
