@@ -1,10 +1,30 @@
 #!/usr/bin/env bash
-# configures a brand new Ubuntu machine to the requirements
+# Intalls nginx server
+# configurind index website
+# confuguring redirection
+# configuring 404 error
+# configuring response header
+# checking for syntax error in configuration
+# restart nginx
 
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+reprn="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com permanent;"
+sudo sed -i "s/server_name _;/$reprn/" /etc/nginx/sites-enabled/default
+
+# Script to create error page and redirect for error 404
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+reprn="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$reprn/" /etc/nginx/sites-enabled/default
+
+# configure response header
 sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 
-# check for syntax errors
+# check for syntax error
 sudo nginx -t
 
-# restart the server and make changes
+# restart the server
 sudo service nginx restart
