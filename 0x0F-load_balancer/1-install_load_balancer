@@ -6,11 +6,10 @@
 # configure HAproxy
 
 # update & show available haproxy
-sudo apt update
-sudo apt show haproxy
+sudo apt-get -y update
 
 # installing latest HAproxy
-sudo apt install -y haproxy=2.6.\*
+sudo apt-get -y install haproxy
 
 # checking status of HAproxy
 sudo systemctl status haproxy
