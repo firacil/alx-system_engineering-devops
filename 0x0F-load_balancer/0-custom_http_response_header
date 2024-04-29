@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# configures a brand new Ubuntu machine to the requirements
+
+sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+
+# check for syntax errors
+sudo nginx -t
+
+# restart the server and make changes
+sudo service nginx restart
