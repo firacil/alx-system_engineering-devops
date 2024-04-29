@@ -6,10 +6,10 @@ exec {'update':
 -> package {'nginx':
   ensure => 'present',
 }
--> file_line {'http_header':
+-> file_line { 'http_header':
   path  => '/etc/nginx/nginx.conf',
   match => 'http {',
-  line  => "http {\n\t\add_header X-Served-By \"${hostname}\";",
+  line  => "http {\n\tadd_header X-Served-By \"${hostname}\";",
 }
 -> exec {'run':
   command => '/usr/sbin/service nginx restart',
