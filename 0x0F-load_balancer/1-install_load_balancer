@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# first update apt
+# show available haproxy
+# installing haproxy
+# checking status after installation
+# configure HAproxy
+
+# update & show available haproxy
+sudo apt update
+sudo apt show haproxy
+
+# installing latest HAproxy
+sudo apt install -y haproxy=2.6.\*
+
+# checking status of HAproxy
+sudo systemctl status haproxy
+
+# Now let me configure it
+
+server_config=\
+"
+frontend my_frontend
+	bind *:80
+	mode http
+	default_backend my_backend
+backend my_backend
+	balance roundrobin
+	server 273094-web-01 100.25.137.186:80 check
+	server 273094-web-02 54.196.50.77:80 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+# test the haproxy config file
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+
+# restart the load balancer
+sudo service haproxy restart
