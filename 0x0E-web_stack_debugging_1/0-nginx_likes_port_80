@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # configure my nginx to listen on port 80
 
-sudo sed -i "/listen 80 default_server /a add_header listen [::]:80 default_server;" /etc/nginx/sites-enabled/default
-sudo sed -i "/listen [::]:80 default_server /a add_header error_page 404 /404.html;" /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
-sudo nginx -t
-
+# restart server
 sudo service nginx restart
