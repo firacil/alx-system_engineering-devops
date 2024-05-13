@@ -1,6 +1,20 @@
 # Configure web-01 so that its firewall redirects port 8080/TCP to port 80/TCP.
 
-: PREROUTING ACCEPT [0:0]
--A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
-COMMIT
-# end of forwarding
+# lets have a backup file, by copying my current iptables rules to a file
+
+iptables-save > myiptable_backup
+
+# port Forwarding Rule
+iptables -t nat -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+
+# Save Firewall configuration
+iptables-save > /etc/iptables/rules.v4
+
+# Apply the changes
+
+sudo systemctl restart iptables
+
+# verify the Rule
+iptables -t nat -L
+
+# end
