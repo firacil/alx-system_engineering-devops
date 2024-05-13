@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+sudo apt update
+
+# install uncomplicated firewall (ufw)
+sudo apt -y install ufw
+
+# before configuring check status
+sudo ufw status
+
+# configurring ufw to block all incoming trafic except ssh, https and http
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo allow 22/tcp
+sudo allow 443/tcp
+sudo allow 80/tcp
+
+# apply changes
+sudo ufw enable
+
+# after configuration, check status
+
+sudo ufw status
