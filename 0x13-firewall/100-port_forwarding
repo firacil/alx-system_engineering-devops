@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Configure web-01 so that its firewall redirects port 8080/TCP to port 80/TCP.
 
-# it's will be good to have a backup file, by copying my current iptables rules
+# it's will be good to have a backup file, by copying current iptables rules
 # But for this project i just skip that
 
 
