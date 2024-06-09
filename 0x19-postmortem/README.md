@@ -21,4 +21,6 @@ After the problem was analyzed and solution pattern was discovered, developers t
 Preventive way: Configuring and always watching after web server reliability.
 Next time we have to provide automatic configuration for any given web-server rather than manual configuration.
 
-![Postmortem](https://docs.google.com/document/d/1H5b9YQifaAIOlDXoXpFcNt0nnkwAgyY-MzoOM3tKU7s/edit?usp=sharing)
+## Postmortem in Diagram
+
+![Postmortem drawio (4)](https://github.com/firacil/alx-system_engineering-devops/assets/84915133/5e1ce71b-d537-4efe-9b93-02570e823c35)
