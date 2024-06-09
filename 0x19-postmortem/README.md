@@ -6,12 +6,12 @@ Apr 29, 2024 6:00 AM EAT to Apr 30, 6:00 AM EAT
 default port used by the Hypertext Transfer Protocol (HTTP) for web traffic is failed, so user can’t send http request
 The root cause of this incident is nginx installation(Configuration).
 <h2><b>Timeline</b></h2><br>
-Timezone (EAT)
-Outage Duration: Apr 29, 2024 6:00 AM EAT to Apr 30, 2024 5:00 AM EAT
-Outage Began April 29, 2024, 6:00 AM EAT
-Staff Acknowledged Apr 29, 2024 12:00 PM EAT
-Team(s) viewed the problem and configured Nginx again.
-Service Restored: April 30, 2024 6:00 AM EAT
+Timezone: (EAT) <br>
+Outage Duration: Apr 29, 2024 6:00 AM EAT to Apr 30, 2024 5:00 AM EAT <br>
+Outage Began: April 29, 2024, 6:00 AM EAT <br>
+Staff Acknowledged: Apr 29, 2024 12:00 PM EAT <br>
+Action or events: Team(s) viewed the problem and configured Nginx again. <br>
+Service Restored: April 30, 2024 6:00 AM EAT <br>
 <h2><b>Root Cause</b></h2><br>
 Web-server nginx failed to listen on default http request due to incorrect configuration of nginx installation.
 On the detection of the problem by monitoring tool and on the alert of PagerDuty to teams(Software Engineers) the problem was analyzed and fixed as soon as possible.
