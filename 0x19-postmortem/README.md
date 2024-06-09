@@ -23,5 +23,4 @@ Next time we have to provide automatic configuration for any given web-server ra
 
 ## Postmortem in Diagram
 
-![Postmortem drawio (3)](https://github.com/firacil/alx-system_engineering-devops/assets/84915133/69f9ec61-66a6-4205-98a8-5baf9f1287e7)
-
+![Postmortem drawio (4)](https://github.com/firacil/alx-system_engineering-devops/assets/84915133/5e1ce71b-d537-4efe-9b93-02570e823c35)
