@@ -20,3 +20,5 @@ After the problem was analyzed and solution pattern was discovered, developers t
 <h2><b>Corrective and Preventative Measures</b></h2>
 Preventive way: Configuring and always watching after web server reliability.
 Next time we have to provide automatic configuration for any given web-server rather than manual configuration.
+
+![Postmortem](https://docs.google.com/document/d/1H5b9YQifaAIOlDXoXpFcNt0nnkwAgyY-MzoOM3tKU7s/edit?usp=sharing)
