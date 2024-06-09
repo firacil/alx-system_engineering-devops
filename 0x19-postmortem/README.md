@@ -1,9 +1,22 @@
-# 0x19. Postmortem
+# Incident Report(Postmortem) on Nginx Fail
 
-## Background
-* Any software system will eventually fail, and that failure can come stem from a wide range of possible factors: bugs, traffic spikes, security issues, hardware failures, natural disasters, human error… Failing is normal and failing is actually a great opportunity to learn and improve. Any great Software Engineer must learn from his/her mistakes to make sure that they won’t happen again. Failing is fine, but failing twice because of the same issue is not.
-
-* A postmortem is a tool widely used in the tech industry. After any outage, the team(s) in charge of the system will write a summary that has 2 main goals:
-
-* To provide the rest of the company’s employees easy access to information detailing the cause of the outage. Often outages can have a huge impact on a company, so managers and executives have to understand what happened and how it will impact their work.
-* And to ensure that the root cause(s) of the outage has been discovered and that measures are taken to make sure it will be fixed.
+<h2><b>Issue Summary</b></h2><br>
+Nginx Not Listening on port 80.
+Apr 29, 2024 6:00 AM EAT to Apr 30, 6:00 AM EAT
+default port used by the Hypertext Transfer Protocol (HTTP) for web traffic is failed, so user can’t send http request
+The root cause of this incident is nginx installation(Configuration).
+<h2><b>Timeline</b></h2><br>
+Timezone (EAT)
+Outage Duration: Apr 29, 2024 6:00 AM EAT to Apr 30, 2024 5:00 AM EAT
+Outage Began April 29, 2024, 6:00 AM EAT
+Staff Acknowledged Apr 29, 2024 12:00 PM EAT
+Team(s) viewed the problem and configured Nginx again.
+Service Restored: April 30, 2024 6:00 AM EAT
+<h2><b>Root Cause</b></h2><br>
+Web-server nginx failed to listen on default http request due to incorrect configuration of nginx installation.
+On the detection of the problem by monitoring tool and on the alert of PagerDuty to teams(Software Engineers) the problem was analyzed and fixed as soon as possible.
+<h2><b>Resolution and recovery</b></h2><br>
+After the problem was analyzed and solution pattern was discovered, developers took action on configuring nginx using Bash Script to listen on default http requests, to make users send any http request to get service we give.
+<h2><b>Corrective and Preventative Measures</b></h2>
+Preventive way: Configuring and always watching after web server reliability.
+Next time we have to provide automatic configuration for any given web-server rather than manual configuration.
